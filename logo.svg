@@ -1,0 +1,48 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <linearGradient id="ring" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22d3ee"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+    <radialGradient id="node" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#a7f3d0"/>
+      <stop offset="100%" stop-color="#22d3ee"/>
+    </radialGradient>
+  </defs>
+
+  <!-- background -->
+  <rect x="0" y="0" width="200" height="200" rx="36" fill="url(#bg)"/>
+
+  <!-- outer scanning ring -->
+  <circle cx="100" cy="100" r="72" fill="none" stroke="url(#ring)" stroke-width="4" opacity="0.55"/>
+  <circle cx="100" cy="100" r="58" fill="none" stroke="url(#ring)" stroke-width="2.5" opacity="0.35"/>
+
+  <!-- network graph: lines first, then nodes on top -->
+  <g stroke="#67e8f9" stroke-width="2.5" opacity="0.85">
+    <line x1="100" y1="100" x2="60" y2="60"/>
+    <line x1="100" y1="100" x2="140" y2="60"/>
+    <line x1="100" y1="100" x2="60" y2="140"/>
+    <line x1="100" y1="100" x2="140" y2="140"/>
+    <line x1="100" y1="100" x2="100" y2="45"/>
+  </g>
+
+  <circle cx="60" cy="60" r="8" fill="url(#node)"/>
+  <circle cx="140" cy="60" r="8" fill="url(#node)"/>
+  <circle cx="60" cy="140" r="8" fill="url(#node)"/>
+  <circle cx="140" cy="140" r="8" fill="url(#node)"/>
+  <circle cx="100" cy="45" r="7" fill="url(#node)"/>
+
+  <!-- central hub node (the "sniffer") -->
+  <circle cx="100" cy="100" r="16" fill="#0ea5e9"/>
+  <circle cx="100" cy="100" r="16" fill="none" stroke="#e0f2fe" stroke-width="2"/>
+
+  <!-- magnifying glass overlay, representing "inspection" -->
+  <g transform="translate(118,118)">
+    <circle cx="14" cy="14" r="15" fill="none" stroke="#f8fafc" stroke-width="5"/>
+    <line x1="25" y1="25" x2="40" y2="40" stroke="#f8fafc" stroke-width="6" stroke-linecap="round"/>
+  </g>
+</svg>
