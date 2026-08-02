@@ -1,7 +1,7 @@
 # Secure Coding Review Report
-**Project:** VulnShop – Sample Flask E-Commerce Backend
+**Project:** Secure-Code-Review – Sample Flask E-Commerce Backend
 **Prepared for:** CodeAlpha Cyber Security Internship — Task 3
-**Reviewer:** [Your Name]
+**Reviewer:** Muhammad Ibrahim
 **Date:** August 2, 2026
 **Language / Framework:** Python 3.12 / Flask
 
