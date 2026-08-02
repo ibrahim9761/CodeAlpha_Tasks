@@ -1,0 +1,32 @@
+name: Security Checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  bandit-and-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run Bandit on vulnerable_app.py (expected to report findings)
+        run: bandit -r app/vulnerable_app.py -f txt || true
+
+      - name: Run Bandit on secure_app_fixed.py (must stay clean of High/Medium)
+        run: bandit -r app/secure_app_fixed.py -ll
+
+      - name: Run automated security regression tests
+        env:
+          FLASK_SECRET_KEY: ci-test-secret
+        run: pytest tests/ -v

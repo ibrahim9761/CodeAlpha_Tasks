@@ -1,0 +1,26 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-9.1.1, pluggy-1.6.0 -- /usr/bin/python3
+cachedir: .pytest_cache
+rootdir: /home/claude/secure-coding-review
+collecting ... collected 18 items
+
+tests/test_security.py::TestAuthentication::test_register_then_login_succeeds PASSED [  5%]
+tests/test_security.py::TestAuthentication::test_login_with_wrong_password_rejected PASSED [ 11%]
+tests/test_security.py::TestAuthentication::test_dashboard_route_resolves PASSED [ 16%]
+tests/test_security.py::TestSQLInjection::test_classic_sqli_payload_does_not_bypass_login PASSED [ 22%]
+tests/test_security.py::TestSQLInjection::test_sqli_payload_does_not_break_query_execution PASSED [ 27%]
+tests/test_security.py::TestPasswordHashing::test_password_is_not_stored_as_plain_md5 PASSED [ 33%]
+tests/test_security.py::TestPasswordHashing::test_short_passwords_rejected PASSED [ 38%]
+tests/test_security.py::TestXSS::test_script_tag_is_escaped_in_search_output PASSED [ 44%]
+tests/test_security.py::TestCommandInjection::test_disallowed_host_rejected PASSED [ 50%]
+tests/test_security.py::TestCommandInjection::test_shell_metacharacters_cannot_chain_commands PASSED [ 55%]
+tests/test_security.py::TestCommandInjection::test_allowed_host_does_not_500 PASSED [ 61%]
+tests/test_security.py::TestInsecureDeserialization::test_cart_accepts_valid_json PASSED [ 66%]
+tests/test_security.py::TestInsecureDeserialization::test_cart_rejects_non_json_payload PASSED [ 72%]
+tests/test_security.py::TestFileUpload::test_allowed_extension_accepted PASSED [ 77%]
+tests/test_security.py::TestFileUpload::test_disallowed_extension_rejected PASSED [ 83%]
+tests/test_security.py::TestFileUpload::test_path_traversal_filename_is_sanitized PASSED [ 88%]
+tests/test_security.py::TestConfiguration::test_secret_key_is_not_the_old_hardcoded_value PASSED [ 94%]
+tests/test_security.py::TestConfiguration::test_app_raises_if_secret_key_env_var_missing PASSED [100%]
+
+============================== 18 passed in 0.93s ==============================

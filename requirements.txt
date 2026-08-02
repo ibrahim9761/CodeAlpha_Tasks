@@ -1,0 +1,5 @@
+flask==3.0.3
+werkzeug==3.0.3
+markupsafe==2.1.5
+bandit==1.9.4
+pytest==9.1.1
